@@ -29,15 +29,45 @@ warn()   { echo -e "${YELLOW}[WARN]${NC}  $*"; }
 error()  { echo -e "${RED}[ERROR]${NC} $*" >&2; exit 1; }
 header() { echo -e "\n${BOLD}━━━ $* ━━━${NC}"; }
 
+# ─── Load Environment Variables ──────────────────────────────
+KEYSTORE_PASSWORD=""
+TELEGRAM_BOT_TOKEN=""
+TELEGRAM_CHAT_ID=""
+ENV_KEYSTORE_PATH=""
+ENV_KEY_ALIAS=""
+ENV_USE_GRADLE=""
+
+if [[ -f .env ]]; then
+  parse_env() {
+    grep -E "^$1=" .env | cut -d'=' -f2- | sed -e 's/^"//' -e 's/"$//' -e "s/^'//" -e "s/'$//"
+  }
+  KEYSTORE_PASSWORD=$(parse_env "KEYSTORE_PASSWORD")
+  TELEGRAM_BOT_TOKEN=$(parse_env "TELEGRAM_BOT_TOKEN")
+  TELEGRAM_CHAT_ID=$(parse_env "TELEGRAM_CHAT_ID")
+  ENV_KEYSTORE_PATH=$(parse_env "KEYSTORE_PATH")
+  ENV_KEY_ALIAS=$(parse_env "KEY_ALIAS")
+  ENV_USE_GRADLE=$(parse_env "USE_GRADLE")
+fi
+
 # ─── Defaults ───────────────────────────────────────────────
-KEYSTORE_PATH="./release-key.jks"
-KEY_ALIAS="release-key"
+KEYSTORE_PATH="${ENV_KEYSTORE_PATH:-./release-key.jks}"
+KEY_ALIAS="${ENV_KEY_ALIAS:-release-key}"
 UNSIGNED_APK=""
 OUTPUT_APK="./app-release-final.apk"
+
 USE_GRADLE=false
+if [[ "${ENV_USE_GRADLE:-}" == "true" ]]; then
+  USE_GRADLE=true
+fi
 FORCE_KEYGEN=false
 
 # ─── Arg Parsing ────────────────────────────────────────────
+VERSION_TAG=""
+if [[ $# -gt 0 && ! "$1" =~ ^-- ]]; then
+  VERSION_TAG="$1"
+  shift
+fi
+
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --keystore)    KEYSTORE_PATH="$2"; shift 2 ;;
@@ -52,6 +82,11 @@ while [[ $# -gt 0 ]]; do
     *) error "Unknown option: $1. Use --help for usage." ;;
   esac
 done
+
+# If version tag is provided, construct output path automatically
+if [[ -n "$VERSION_TAG" ]]; then
+  OUTPUT_APK="dist/safeexit-app-${VERSION_TAG}.apk"
+fi
 
 # ─── Ensure Directories Exist ───────────────────────────────
 mkdir -p keys dist
@@ -132,16 +167,7 @@ ALIGNED_APK="${UNSIGNED_APK%.apk}-aligned.apk"
 log "Aligning APK..."
 zipalign -v -f 4 "$UNSIGNED_APK" "$ALIGNED_APK"
 success "Aligned APK: $ALIGNED_APK"
-
-# ─── Load Environment Variables ──────────────────────────────
-KEYSTORE_PASSWORD=""
-TELEGRAM_BOT_TOKEN=""
-TELEGRAM_CHAT_ID=""
-if [[ -f .env ]]; then
-  KEYSTORE_PASSWORD=$(grep -E "^KEYSTORE_PASSWORD=" .env | cut -d'=' -f2- | sed -e 's/^"//' -e 's/"$//' -e "s/^'//" -e "s/'$//")
-  TELEGRAM_BOT_TOKEN=$(grep -E "^TELEGRAM_BOT_TOKEN=" .env | cut -d'=' -f2- | sed -e 's/^"//' -e 's/"$//' -e "s/^'//" -e "s/'$//")
-  TELEGRAM_CHAT_ID=$(grep -E "^TELEGRAM_CHAT_ID=" .env | cut -d'=' -f2- | sed -e 's/^"//' -e 's/"$//' -e "s/^'//" -e "s/'$//")
-fi
+# Environment variables loaded at startup
 
 # ─── Step 4: Sign ───────────────────────────────────────────
 header "Step 4: Sign APK"
