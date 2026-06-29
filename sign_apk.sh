@@ -135,8 +135,12 @@ success "Aligned APK: $ALIGNED_APK"
 
 # ─── Load Environment Variables ──────────────────────────────
 KEYSTORE_PASSWORD=""
+TELEGRAM_BOT_TOKEN=""
+TELEGRAM_CHAT_ID=""
 if [[ -f .env ]]; then
   KEYSTORE_PASSWORD=$(grep -E "^KEYSTORE_PASSWORD=" .env | cut -d'=' -f2- | sed -e 's/^"//' -e 's/"$//' -e "s/^'//" -e "s/'$//")
+  TELEGRAM_BOT_TOKEN=$(grep -E "^TELEGRAM_BOT_TOKEN=" .env | cut -d'=' -f2- | sed -e 's/^"//' -e 's/"$//' -e "s/^'//" -e "s/'$//")
+  TELEGRAM_CHAT_ID=$(grep -E "^TELEGRAM_CHAT_ID=" .env | cut -d'=' -f2- | sed -e 's/^"//' -e 's/"$//' -e "s/^'//" -e "s/'$//")
 fi
 
 # ─── Step 4: Sign ───────────────────────────────────────────
@@ -174,6 +178,35 @@ success "Signature verified!"
 # ─── Cleanup ────────────────────────────────────────────────
 log "Cleaning up intermediate aligned APK..."
 rm -f "$ALIGNED_APK"
+
+# ─── Step 6: Send to Telegram (optional) ─────────────────────
+if [[ -n "$TELEGRAM_BOT_TOKEN" && -n "$TELEGRAM_CHAT_ID" ]]; then
+  header "Step 6: Send to Telegram"
+
+  if ! command -v curl &>/dev/null; then
+    warn "'curl' is not installed. Cannot upload to Telegram."
+  else
+    log "Uploading final APK to Telegram..."
+
+    CAPTION="SafeExit Emergency Privacy Protection - Release Build Successful! 🚀
+
+File: $(basename "$OUTPUT_APK")"
+
+    RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendDocument" \
+      -F chat_id="${TELEGRAM_CHAT_ID}" \
+      -F document="@${OUTPUT_APK}" \
+      -F caption="${CAPTION}")
+
+    HTTP_STATUS=$(echo "$RESPONSE" | tail -n1)
+    BODY=$(echo "$RESPONSE" | head -n -1)
+
+    if [ "$HTTP_STATUS" -eq 200 ]; then
+      success "Successfully sent APK to Telegram!"
+    else
+      warn "Failed to send APK to Telegram (HTTP $HTTP_STATUS). Response: $BODY"
+    fi
+  fi
+fi
 
 # ─── Summary ────────────────────────────────────────────────
 echo ""
