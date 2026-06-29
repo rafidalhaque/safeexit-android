@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Shield shape -->
+    <path
+        android:fillColor="#E05C5C"
+        android:pathData="M54,18 L24,30 L24,54 C24,72.6 37.2,89.4 54,93 C70.8,89.4 84,72.6 84,54 L84,30 Z" />
+
+    <!-- Exit arrow: horizontal bar -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M42,52 L62,52 L62,56 L42,56 Z" />
+
+    <!-- Exit arrow: arrowhead pointing right -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M58,44 L70,54 L58,64 Z" />
+
+    <!-- Door frame left vertical -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,40 L42,40 L42,68 L38,68 Z" />
+
+    <!-- Door frame top horizontal -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,40 L54,40 L54,44 L38,44 Z" />
+
+    <!-- Door frame bottom horizontal -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,64 L54,64 L54,68 L38,68 Z" />
+</vector>

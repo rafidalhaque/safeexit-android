@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">SafeExit</string>
+    <string name="app_tagline">Emergency privacy at your fingertips</string>
+
+    <!-- Biometric Auth -->
+    <string name="auth_title">Unlock SafeExit</string>
+    <string name="auth_subtitle">Authenticate to access the app</string>
+    <string name="auth_error_no_hardware">This device does not support biometric authentication.</string>
+    <string name="auth_error_not_enrolled">No biometric credentials enrolled. Please set up biometrics or a screen lock in Settings.</string>
+    <string name="auth_error_security_update">A security update is required before biometric authentication can be used.</string>
+    <string name="auth_error_generic">Authentication error: %1$s</string>
+    <string name="auth_failed">Authentication failed. Please try again.</string>
+
+    <!-- Device Admin -->
+    <string name="device_admin_description">SafeExit requires Device Administrator privileges to perform silent app uninstalls during an emergency.</string>
+    <string name="device_admin_enabled">Device Administrator enabled</string>
+    <string name="device_admin_disabled">Device Administrator disabled</string>
+    <string name="device_admin_not_owner">SafeExit is not set as Device Owner. Silent uninstall requires Device Owner privileges.\n\nRun via ADB:\nadb shell dpm set-device-owner com.teamsabily.safeexit/.receiver.SafeExitDeviceAdminReceiver</string>
+
+    <!-- App Selection -->
+    <string name="select_apps_title">Select Apps</string>
+    <string name="select_apps_subtitle">Choose apps to remove during an emergency</string>
+    <string name="no_apps_selected">No apps selected</string>
+    <string name="apps_selected_count">%1$d app(s) selected</string>
+    <string name="search_apps_hint">Search apps…</string>
+    <string name="include_system_apps">Include system apps</string>
+    <string name="loading_apps">Loading installed apps…</string>
+    <string name="no_apps_found">No apps found</string>
+
+    <!-- Uninstall -->
+    <string name="uninstall_trigger_label">Slide to activate</string>
+    <string name="uninstall_in_progress">Uninstalling apps…</string>
+    <string name="uninstall_complete">Uninstall complete</string>
+    <string name="uninstall_success">%1$s uninstalled successfully</string>
+    <string name="uninstall_failed">Failed to uninstall %1$s</string>
+    <string name="uninstall_result_summary">%1$d of %2$d apps removed successfully</string>
+    <string name="uninstall_confirm_title">Confirm Emergency Uninstall</string>
+    <string name="uninstall_confirm_message">This will permanently remove %1$d selected app(s) and all their data. This action cannot be undone.</string>
+    <string name="uninstall_confirm_yes">Proceed</string>
+    <string name="uninstall_confirm_cancel">Cancel</string>
+
+    <!-- General -->
+    <string name="btn_done">Done</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_retry">Retry</string>
+    <string name="btn_settings">Settings</string>
+    <string name="error_unexpected">An unexpected error occurred. Please try again.</string>
+</resources>
