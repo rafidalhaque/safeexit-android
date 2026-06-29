@@ -30,3 +30,7 @@ local.properties
 *.jks
 *.keystore
 !gradle/wrapper/gradle-wrapper.jar
+
+# Local environment configurations (containing passwords)
+.env
+
