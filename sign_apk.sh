@@ -133,6 +133,12 @@ log "Aligning APK..."
 zipalign -v -f 4 "$UNSIGNED_APK" "$ALIGNED_APK"
 success "Aligned APK: $ALIGNED_APK"
 
+# ─── Load Environment Variables ──────────────────────────────
+KEYSTORE_PASSWORD=""
+if [[ -f .env ]]; then
+  KEYSTORE_PASSWORD=$(grep -E "^KEYSTORE_PASSWORD=" .env | cut -d'=' -f2- | sed -e 's/^"//' -e 's/"$//' -e "s/^'//" -e "s/'$//")
+fi
+
 # ─── Step 4: Sign ───────────────────────────────────────────
 header "Step 4: Sign APK"
 
@@ -140,11 +146,22 @@ log "Signing with keystore: $KEYSTORE_PATH (alias: $KEY_ALIAS)"
 log "Output: $OUTPUT_APK"
 echo ""
 
-apksigner sign \
-  --ks "$KEYSTORE_PATH" \
-  --ks-key-alias "$KEY_ALIAS" \
-  --out "$OUTPUT_APK" \
-  "$ALIGNED_APK"
+if [[ -n "$KEYSTORE_PASSWORD" ]]; then
+  log "Using password from .env for signing..."
+  export KEYSTORE_PASSWORD
+  apksigner sign \
+    --ks "$KEYSTORE_PATH" \
+    --ks-key-alias "$KEY_ALIAS" \
+    --ks-pass env:KEYSTORE_PASSWORD \
+    --out "$OUTPUT_APK" \
+    "$ALIGNED_APK"
+else
+  apksigner sign \
+    --ks "$KEYSTORE_PATH" \
+    --ks-key-alias "$KEY_ALIAS" \
+    --out "$OUTPUT_APK" \
+    "$ALIGNED_APK"
+fi
 
 success "Signed APK: $OUTPUT_APK"
 
