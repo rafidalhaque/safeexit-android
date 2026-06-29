@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.ui.component
+﻿package lab.insan.safeexit.ui.component
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.spring
@@ -50,13 +50,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.teamsabily.safeexit.ui.theme.DarkNavy
-import com.teamsabily.safeexit.ui.theme.PrimaryRed
-import com.teamsabily.safeexit.ui.theme.SecondaryBlue
-import com.teamsabily.safeexit.ui.theme.SurfaceLight
-import com.teamsabily.safeexit.ui.theme.TextPrimary
-import com.teamsabily.safeexit.ui.theme.TextSecondary
-import com.teamsabily.safeexit.ui.theme.WarningOrange
+import lab.insan.safeexit.ui.theme.DarkNavy
+import lab.insan.safeexit.ui.theme.PrimaryRed
+import lab.insan.safeexit.ui.theme.SecondaryBlue
+import lab.insan.safeexit.ui.theme.SurfaceLight
+import lab.insan.safeexit.ui.theme.TextPrimary
+import lab.insan.safeexit.ui.theme.TextSecondary
+import lab.insan.safeexit.ui.theme.WarningOrange
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

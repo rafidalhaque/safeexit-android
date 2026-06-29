@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.data
+﻿package lab.insan.safeexit.data
 
 import android.graphics.drawable.Drawable
 

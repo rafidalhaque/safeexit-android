@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+﻿import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     id("com.android.application")
@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.teamsabily.safeexit"
+    namespace = "lab.insan.safeexit"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.teamsabily.safeexit"
+        applicationId = "lab.insan.safeexit"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

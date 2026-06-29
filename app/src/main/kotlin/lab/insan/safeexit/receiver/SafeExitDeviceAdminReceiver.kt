@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.receiver
+﻿package lab.insan.safeexit.receiver
 
 import android.app.admin.DeviceAdminReceiver
 import android.content.Context

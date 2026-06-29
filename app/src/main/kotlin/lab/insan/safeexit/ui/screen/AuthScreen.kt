@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.ui.screen
+﻿package lab.insan.safeexit.ui.screen
 
 import android.app.Activity
 import androidx.compose.animation.AnimatedVisibility
@@ -31,12 +31,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.FragmentActivity
-import com.teamsabily.safeexit.auth.BiometricAuthManager
-import com.teamsabily.safeexit.ui.theme.DarkNavy
-import com.teamsabily.safeexit.ui.theme.PrimaryRed
-import com.teamsabily.safeexit.ui.theme.SecondaryBlue
-import com.teamsabily.safeexit.ui.theme.TextPrimary
-import com.teamsabily.safeexit.ui.theme.TextSecondary
+import lab.insan.safeexit.auth.BiometricAuthManager
+import lab.insan.safeexit.ui.theme.DarkNavy
+import lab.insan.safeexit.ui.theme.PrimaryRed
+import lab.insan.safeexit.ui.theme.SecondaryBlue
+import lab.insan.safeexit.ui.theme.TextPrimary
+import lab.insan.safeexit.ui.theme.TextSecondary
 
 @Composable
 fun AuthScreen(

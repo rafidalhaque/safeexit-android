@@ -1,4 +1,4 @@
-# Add project specific ProGuard rules here.
+﻿# Add project specific ProGuard rules here.
 # You can control the set of applied configuration files using the
 # proguardFiles setting in build.gradle.kts.
 
@@ -8,4 +8,4 @@
 }
 
 # Keep the SafeExit DeviceAdminReceiver
--keep class com.teamsabily.safeexit.receiver.SafeExitDeviceAdminReceiver { *; }
+-keep class lab.insan.safeexit.receiver.SafeExitDeviceAdminReceiver { *; }

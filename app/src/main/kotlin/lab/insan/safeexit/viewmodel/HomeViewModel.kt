@@ -1,13 +1,13 @@
-package com.teamsabily.safeexit.viewmodel
+﻿package lab.insan.safeexit.viewmodel
 
 import android.app.Application
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.teamsabily.safeexit.data.AppInfo
-import com.teamsabily.safeexit.data.AppRepository
-import com.teamsabily.safeexit.uninstall.UninstallManager
+import lab.insan.safeexit.data.AppInfo
+import lab.insan.safeexit.data.AppRepository
+import lab.insan.safeexit.uninstall.UninstallManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

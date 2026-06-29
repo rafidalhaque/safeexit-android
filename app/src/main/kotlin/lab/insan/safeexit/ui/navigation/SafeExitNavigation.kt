@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.ui.navigation
+﻿package lab.insan.safeexit.ui.navigation
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -24,12 +24,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.teamsabily.safeexit.ui.screen.HomeScreen
-import com.teamsabily.safeexit.ui.screen.ManageScreen
-import com.teamsabily.safeexit.ui.theme.DarkNavy
-import com.teamsabily.safeexit.ui.theme.PrimaryRed
-import com.teamsabily.safeexit.ui.theme.TextPrimary
-import com.teamsabily.safeexit.ui.theme.TextSecondary
+import lab.insan.safeexit.ui.screen.HomeScreen
+import lab.insan.safeexit.ui.screen.ManageScreen
+import lab.insan.safeexit.ui.theme.DarkNavy
+import lab.insan.safeexit.ui.theme.PrimaryRed
+import lab.insan.safeexit.ui.theme.TextPrimary
+import lab.insan.safeexit.ui.theme.TextSecondary
 
 private sealed class BottomNavItem(
     val route: String,

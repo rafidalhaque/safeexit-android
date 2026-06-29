@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.ui.theme
+﻿package lab.insan.safeexit.ui.theme
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme

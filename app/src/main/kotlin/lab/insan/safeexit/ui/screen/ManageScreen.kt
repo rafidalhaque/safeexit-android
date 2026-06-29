@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.ui.screen
+﻿package lab.insan.safeexit.ui.screen
 
 import android.graphics.drawable.Drawable
 import androidx.compose.foundation.Image
@@ -47,14 +47,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.drawable.toBitmap
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.teamsabily.safeexit.ui.theme.CardBackground
-import com.teamsabily.safeexit.ui.theme.DarkNavy
-import com.teamsabily.safeexit.ui.theme.PrimaryRed
-import com.teamsabily.safeexit.ui.theme.SecondaryBlue
-import com.teamsabily.safeexit.ui.theme.SurfaceLight
-import com.teamsabily.safeexit.ui.theme.TextPrimary
-import com.teamsabily.safeexit.ui.theme.TextSecondary
-import com.teamsabily.safeexit.viewmodel.ManageViewModel
+import lab.insan.safeexit.ui.theme.CardBackground
+import lab.insan.safeexit.ui.theme.DarkNavy
+import lab.insan.safeexit.ui.theme.PrimaryRed
+import lab.insan.safeexit.ui.theme.SecondaryBlue
+import lab.insan.safeexit.ui.theme.SurfaceLight
+import lab.insan.safeexit.ui.theme.TextPrimary
+import lab.insan.safeexit.ui.theme.TextSecondary
+import lab.insan.safeexit.viewmodel.ManageViewModel
 
 @Composable
 fun ManageScreen(

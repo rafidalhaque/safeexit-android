@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit
+﻿package lab.insan.safeexit
 
 import android.app.Application
 

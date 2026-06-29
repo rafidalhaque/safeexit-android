@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
     <string name="app_name">SafeExit</string>
@@ -17,7 +17,7 @@
     <string name="device_admin_description">SafeExit requires Device Administrator privileges to perform silent app uninstalls during an emergency.</string>
     <string name="device_admin_enabled">Device Administrator enabled</string>
     <string name="device_admin_disabled">Device Administrator disabled</string>
-    <string name="device_admin_not_owner">SafeExit is not set as Device Owner. Silent uninstall requires Device Owner privileges.\n\nRun via ADB:\nadb shell dpm set-device-owner com.teamsabily.safeexit/.receiver.SafeExitDeviceAdminReceiver</string>
+    <string name="device_admin_not_owner">SafeExit is not set as Device Owner. Silent uninstall requires Device Owner privileges.\n\nRun via ADB:\nadb shell dpm set-device-owner lab.insan.safeexit/.receiver.SafeExitDeviceAdminReceiver</string>
 
     <!-- App Selection -->
     <string name="select_apps_title">Select Apps</string>

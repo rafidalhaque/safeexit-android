@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.ui.screen
+﻿package lab.insan.safeexit.ui.screen
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -40,13 +40,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.teamsabily.safeexit.ui.theme.CardBackground
-import com.teamsabily.safeexit.ui.theme.DarkNavy
-import com.teamsabily.safeexit.ui.theme.PrimaryRed
-import com.teamsabily.safeexit.ui.theme.SuccessGreen
-import com.teamsabily.safeexit.ui.theme.TextPrimary
-import com.teamsabily.safeexit.ui.theme.TextSecondary
-import com.teamsabily.safeexit.uninstall.UninstallManager
+import lab.insan.safeexit.ui.theme.CardBackground
+import lab.insan.safeexit.ui.theme.DarkNavy
+import lab.insan.safeexit.ui.theme.PrimaryRed
+import lab.insan.safeexit.ui.theme.SuccessGreen
+import lab.insan.safeexit.ui.theme.TextPrimary
+import lab.insan.safeexit.ui.theme.TextSecondary
+import lab.insan.safeexit.uninstall.UninstallManager
 
 @Composable
 fun ResultScreen(

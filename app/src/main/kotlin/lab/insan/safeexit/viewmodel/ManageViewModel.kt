@@ -1,10 +1,10 @@
-package com.teamsabily.safeexit.viewmodel
+﻿package lab.insan.safeexit.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.teamsabily.safeexit.data.AppInfo
-import com.teamsabily.safeexit.data.AppRepository
+import lab.insan.safeexit.data.AppInfo
+import lab.insan.safeexit.data.AppRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

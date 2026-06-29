@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.uninstall
+﻿package lab.insan.safeexit.uninstall
 
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
@@ -45,7 +45,7 @@ class UninstallManager(private val context: Context) {
         if (packages.isEmpty()) return
 
         val sessionId = UUID.randomUUID().toString()
-        val action = "com.teamsabily.safeexit.UNINSTALL_RESULT_$sessionId"
+        val action = "lab.insan.safeexit.UNINSTALL_RESULT_$sessionId"
 
         // Build a lookup map from packageName -> appName for resolving results
         val packageToName = packages.associate { it.first to it.second }

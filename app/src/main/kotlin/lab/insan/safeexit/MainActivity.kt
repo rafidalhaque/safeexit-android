@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit
+﻿package lab.insan.safeexit
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -8,9 +8,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.fragment.app.FragmentActivity
-import com.teamsabily.safeexit.ui.navigation.SafeExitNavigation
-import com.teamsabily.safeexit.ui.screen.AuthScreen
-import com.teamsabily.safeexit.ui.theme.SafeExitTheme
+import lab.insan.safeexit.ui.navigation.SafeExitNavigation
+import lab.insan.safeexit.ui.screen.AuthScreen
+import lab.insan.safeexit.ui.theme.SafeExitTheme
 
 class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

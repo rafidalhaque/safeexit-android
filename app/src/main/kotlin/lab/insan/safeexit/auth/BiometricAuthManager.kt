@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.auth
+﻿package lab.insan.safeexit.auth
 
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt

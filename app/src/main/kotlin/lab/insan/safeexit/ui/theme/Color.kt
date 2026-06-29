@@ -1,4 +1,4 @@
-package com.teamsabily.safeexit.ui.theme
+﻿package lab.insan.safeexit.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
